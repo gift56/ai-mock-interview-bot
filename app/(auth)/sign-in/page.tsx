@@ -1,5 +1,10 @@
-import React from "react";
+import { AuthForm } from "@/components/auth";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign In - AI Mock Interview Bot",
+};
 
 export default function SignInPage() {
-  return <div>SignInPage</div>;
+  return <AuthForm type="sign-in" />;
 }

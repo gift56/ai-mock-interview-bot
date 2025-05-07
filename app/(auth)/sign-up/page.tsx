@@ -1,5 +1,10 @@
-import React from "react";
+import { AuthForm } from "@/components/auth";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Create An Account - Practice job interviews with AI",
+};
 
 export default function SignUpPage() {
-  return <div>SignUpPage</div>;
+  return <AuthForm type="sign-up" />;
 }
