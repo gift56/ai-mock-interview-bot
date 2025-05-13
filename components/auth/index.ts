@@ -1,3 +1,4 @@
 import AuthForm from "./AuthForm";
+import UserAvatar from "./UserAvatar";
 
-export { AuthForm };
+export { AuthForm, UserAvatar };

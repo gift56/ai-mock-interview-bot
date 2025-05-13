@@ -1,3 +1,4 @@
+import { UserAvatar } from "@/components/auth";
 import { isAuthenticated } from "@/lib/actions/auth/auth.actions";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,11 +14,12 @@ export default async function HomeRootLayout({
 
   return (
     <div className="root-layout">
-      <nav>
+      <nav className="flex flex-row items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="PrepWise Logo" width={38} height={32} />
           <h2 className="text-primary-100">PrepWise</h2>
         </Link>
+        <UserAvatar />
       </nav>
       {children}
     </div>
