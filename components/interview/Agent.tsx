@@ -33,7 +33,7 @@ const Agent: React.FC<AgentProps> = ({
   const [messages, setMessages] = useState<SavedMessage[]>([]);
   const [lastMessage, setLastMessage] = useState<string>("");
 
-   useEffect(() => {
+  useEffect(() => {
     const onCallStart = () => {
       setCallStatus(CallStatus.ACTIVE);
     };
