@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export const metadata: Metadata = {
   title: {
     template: "%s",
-    default: "PrepWise | Auth",
+    default: "QuestCore | Auth",
   },
 };
 

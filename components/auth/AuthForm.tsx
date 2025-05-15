@@ -16,6 +16,8 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { signIn, signUp } from "@/lib/actions/auth/auth.actions";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -27,6 +29,7 @@ const authFormSchema = (type: FormType) => {
 
 const AuthForm: React.FC<{ type: FormType }> = ({ type }) => {
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const formSchema = authFormSchema(type);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -40,6 +43,7 @@ const AuthForm: React.FC<{ type: FormType }> = ({ type }) => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
+      setIsSubmitting(true);
       if (type === "sign-up") {
         const { name, email, password } = data;
 
@@ -89,6 +93,8 @@ const AuthForm: React.FC<{ type: FormType }> = ({ type }) => {
     } catch (error) {
       console.log(error);
       toast.error(`There was an error: ${error}`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -99,7 +105,7 @@ const AuthForm: React.FC<{ type: FormType }> = ({ type }) => {
       <div className="flex flex-col gap-6 card py-14 px-10">
         <div className="flex flex-row gap-2 justify-center">
           <Image src="/logo.svg" alt="logo" height={32} width={38} />
-          <h2 className="text-primary-100">PrepWise</h2>
+          <h2 className="text-primary-100">QuestCore</h2>
         </div>
 
         <h3>Practice job interviews with AI</h3>
@@ -134,10 +140,16 @@ const AuthForm: React.FC<{ type: FormType }> = ({ type }) => {
               placeholder="Enter your password"
               type="password"
             />
-
-            <Button className="btn" type="submit">
-              {isSignIn ? "Sign In" : "Create an Account"}
-            </Button>
+            {isSubmitting ? (
+              <Button className="btn !flex" type="submit">
+                <Loader2 className="animate-spin text-black" />
+                <span>Submitting...</span>
+              </Button>
+            ) : (
+              <Button className="btn" type="submit">
+                {isSignIn ? "Sign In" : "Create an Account"}
+              </Button>
+            )}
           </form>
         </Form>
 

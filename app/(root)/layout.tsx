@@ -16,8 +16,8 @@ export default async function HomeRootLayout({
     <div className="root-layout">
       <nav className="flex flex-row items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="PrepWise Logo" width={38} height={32} />
-          <h2 className="text-primary-100">PrepWise</h2>
+          <Image src="/logo.svg" alt="QuestCore Logo" width={38} height={32} />
+          <h2 className="text-primary-100">QuestCore</h2>
         </Link>
         <UserAvatar />
       </nav>

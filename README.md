@@ -1,5 +1,5 @@
 <div align="center">
- <h3 align="center">Prepwise: A job interview preparation platform powered by Vapi AI Voice agents</h3>
+ <h3 align="center">QuestCore: A job interview preparation platform powered by Vapi AI Voice agents</h3>
  
   <div>
     <img src="https://img.shields.io/badge/-Next.JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=black" alt="next.js" />
@@ -21,7 +21,7 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Built with Next.js for the user interface and backend logic, Firebase for authentication and data storage, styled with TailwindCSS and using Vapi's voice agents, Prepwise is a website project designed to help you learn integrating AI models with your apps. The platform offers a sleek and modern experience for job interview preparation.
+Built with Next.js for the user interface and backend logic, Firebase for authentication and data storage, styled with TailwindCSS and using Vapi's voice agents, QuestCore is a website project designed to help you learn integrating AI models with your apps. The platform offers a sleek and modern experience for job interview preparation.
 
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
